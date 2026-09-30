@@ -30,7 +30,12 @@ git merge <branch>
 git status
 git add .
 git commit -m "Resolve conflict"
+
+
+
+
 git push
+
 
 Cancel merge:
 
