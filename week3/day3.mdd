@@ -1,0 +1,109 @@
+# React Routing
+
+Today I learned about **routing in React** using `react-router-dom`.
+
+Routing allows us to display different components based on the URL **without reloading the entire page**.
+
+### Install
+
+```bash
+npm install react-router-dom
+```
+
+### Main Concepts
+
+**1. BrowserRouter**
+
+Enables routing in the React application.
+
+```jsx
+<BrowserRouter>
+  ...
+</BrowserRouter>
+```
+
+**2. Routes**
+
+Contains all the routes.
+
+```jsx
+<Routes>
+  ...
+</Routes>
+```
+
+**3. Route**
+
+Connects a URL with a component.
+
+```jsx
+<Route path="/about" element={<About />} />
+```
+
+Meaning:
+
+```text
+/about → About component
+```
+
+**4. Link**
+
+Used to navigate between pages without a full page reload.
+
+```jsx
+<Link to="/about">About</Link>
+```
+
+### Navbar Example
+
+```jsx
+function Navbar() {
+  return (
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/contact">Contact</Link>
+    </nav>
+  );
+}
+```
+
+### Complete Flow
+
+```text
+User clicks Link
+      ↓
+URL changes
+      ↓
+Routes checks the URL
+      ↓
+Matching Route is found
+      ↓
+Component is displayed
+```
+
+### Simple Example
+
+```jsx
+<BrowserRouter>
+  <Navbar />
+
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+  </Routes>
+</BrowserRouter>
+```
+
+### Key Takeaway
+
+```text
+BrowserRouter → Enables routing
+Routes        → Holds routes
+Route         → URL → Component
+Link          → Navigation
+Navbar        → Contains navigation links
+```
+
+React Router helps build **Single Page Applications (SPAs)** with multiple URLs and smooth navigation.
